@@ -149,19 +149,21 @@ if First == 6 then T6() end
 if First == 7 then T7() end end
 
 function T1()
-LibStart=gg.getRangesList('libil2cpp.so')[2].start
-Fraj=nil
-Fraj={}
-Fraj[1]={}
-Fraj[2]={}
-Fraj[1].address=LibStart+0x34C3858 
-Fraj[1].value='h200080D2'
-Fraj[1].flags=4
-Fraj[2].address=LibStart+(0x34C3858+0x4) 
-Fraj[2].value='hC0035FD6'
-Fraj[2].flags=4
-gg.setValues(Fraj)
+      Lib = gg.getRangesList("libil2cpp.so")[2]["start"]
+      gg.setValues({
+        [1] = {
+          ["address"] = Lib + 0x21320f4,
+          ["flags"] = 4,
+          ["value"] = "h200080D2",
+        },
+        [2] = {
+          ["address"] = Lib + 0x21320f8,
+          ["flags"] = 4,
+          ["value"] = "hC0035FD6",
+        },
+      })
 gg.toast(" ABLE TO DRIVE ANYONE'S CAR ACTIVATED")
+gg.clearResults() 
 end
 
 function T2()
@@ -784,13 +786,20 @@ end
 function M4()
 gg.alert(" TAMBAY KA MUNA SA LOBBY")
 gg.sleep(2000)
-gg.setRanges(16384)
-gg.searchNumber("-8.49755248e-25;-1.27424102e34;-2.87131023e-14:9",16, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.refineNumber("-1.27424102e34;-2.87131023e-14:9",16, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(9999, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("-2.74878956e11;-6.13017998e13",16)
+Lib = gg.getRangesList("libil2cpp.so")[2]["start"]
+gg.setValues({ -- table(712465)
+	[1] = { -- table(461753a)
+		["address"] = Lib + 0x1fede44,
+		["flags"] = 4, -- gg.TYPE_DWORD
+		["value"] = "h200080D2",
+	},
+	[2] = { -- table(412c5eb)
+		["address"] = Lib + 0x1fede48,
+		["flags"] = 4, -- gg.TYPE_DWORD
+		["value"] = "hC0035FD6",
+	},
+})
 gg.clearResults()
-gg.clearList()
 gg.alert("PUNTA KA SA LEVELS")
 gg.sleep(2000)
 gg.alert("CLICK MO LEVEL 1 TAS MENU")
