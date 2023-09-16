@@ -16,8 +16,8 @@ end
 -----------_-------------------------------------------------------------------------------------------------------_-------------------------------------------------------------------------------------------------------_-------------------------------------------------------------------------------------------------------_--------------------------------------------------------------------------------------------~1
 --Created by Fraj
 
-if os.date("%m%d%Y") > "09102023" then
-gameguardianph=gg.alert(" NAKO LODI EXPIRED NA ANG GoJABOL 2days mo")
+if os.date("%m%d%Y") > "09252023" then
+gameguardianph=gg.alert(" NAKO LODI EXPIRED NA ANG GoJABOL15days mo")
 gg.alert("avail kanalang ulit kung nagustuhan mo")
 gg.alert("IG & FB : @Talyer ni fraj")
 gg.toast("forced closed")
